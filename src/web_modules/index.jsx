@@ -16,7 +16,6 @@ const initState = {
     }
 }
 
-window.addEventListener('load', () => {
 
 const store = create( root, initState )
 
@@ -49,5 +48,3 @@ const store = create( root, initState )
 
         }
     })
-
-})
