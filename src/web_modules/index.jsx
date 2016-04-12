@@ -6,13 +6,18 @@ import React            from 'react'
 import Curve            from './component/curve/main.jsx'
 import Contextify       from './component/abstract/contextify.jsx'
 import {create}         from 'october'
-import * as root        from './fragment'
+const root = require('./fragment')
 
 const initState = {
     params:{
-        friendAttraction    : { k: 0.01 },
-        neighbourRepulsion  : { k: 0.01 },
-        targetAttraction    : { k: 0.01 },
+        friendAttraction    : {
+            d0              : 20,
+            fatness         : 15,
+            friendlyness    : 1,
+            revulsion       : 10,
+        },
+        neighbourRepulsion  : { k: 10 },
+        targetAttraction    : { k: 10 },
     }
 }
 
