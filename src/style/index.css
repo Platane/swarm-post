@@ -6,14 +6,9 @@ body {
 	padding: 0;
 }
 
-.component-curve{
-    width: 400px;
-    height: 400px;
-}
-
 figure[data-component="curve"] {
     width: 400px;
-    height: 400px;
+    height: 200px;
 }
 
 img{

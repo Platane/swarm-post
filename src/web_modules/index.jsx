@@ -4,6 +4,7 @@ require('../style/index.css')
 import ReactDOM         from 'react-dom'
 import React            from 'react'
 import Curve            from './component/curve/main.jsx'
+import ForceField       from './component/forceField/main.jsx'
 import Contextify       from './component/abstract/contextify.jsx'
 import {create}         from 'october'
 const root = require('./fragment')
@@ -17,7 +18,7 @@ const initState = {
             revulsion       : 10,
         },
         neighbourRepulsion  : { k: 10 },
-        targetAttraction    : { k: 10 },
+        targetAttraction    : { k: 0.6 },
     }
 }
 
@@ -39,6 +40,10 @@ const store = create( root, initState )
         switch( component ){
             case 'curve' :
                 Component = Curve
+                break
+
+            case 'forceField' :
+                Component = ForceField
                 break
         }
 

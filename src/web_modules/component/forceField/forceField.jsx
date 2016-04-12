@@ -1,35 +1,31 @@
-import React from 'react'
-import {computeBoundingBox, enlargeBoundingBox} from './boundingBox'
-
-const toSvgPath = path =>
-    `M ${path[0].x} ${path[0].y}`
-    + path.slice(1).map( p => `L ${p.x} ${p.y}`).join(' ')
-
-const proj = ( boundingBox, width, height ) =>
-    p => ({
-        x : ( p.x - boundingBox.xMin )/( boundingBox.xMax - boundingBox.xMin ) * width,
-        y : ( 1 - ( p.y - boundingBox.yMin )/( boundingBox.yMax - boundingBox.yMin ) ) * height,
-    })
-
-const Curve = ({ points, width, height }) => {
-
-    width = width   || 400
-    height = height || 400
-
-    const boundingBox = enlargeBoundingBox( computeBoundingBox( points ), 10 )
+import React, {Component} from 'react'
+import draw from './draw'
 
 
-    return (
-        <div className="curve" >
+class ForceField extends Component {
 
-            <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
+    componentWillUnmount() {
+        cancelAnimationFrame( this.af )
+    }
 
-                <path d={ toSvgPath( points.map( proj( boundingBox, width, height ) ) ) } />
+    render(){
 
-            </svg>
+        let { amplitude, width, height } = this.props
 
-        </div>
-    )
+        width = width   || 400
+        height = height || 200
+
+        cancelAnimationFrame( this.af )
+        this.af = requestAnimationFrame( () => draw( this.refs.canvas.getContext('2d'), amplitude, width, height ) )
+
+        return (
+            <div className="forceField" >
+
+                <canvas ref="canvas" width={width} height={height} />
+
+            </div>
+        )
+    }
 }
 
-export default Curve
+export default ForceField

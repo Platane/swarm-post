@@ -21,6 +21,19 @@ export const connect = ( getDependencies, getState, methods, C ) => {
                 this.setState( getState( ...args, this.props ) )
         }
 
+        shouldComponentUpdate(nextProps, nextState) {
+
+            for ( let key in nextProps )
+                if ( this.props[ key ] != nextProps[ key ] )
+                    return true
+
+            for ( let key in nextState )
+                if ( this.state[ key ] != nextState[ key ] )
+                    return true
+
+            return false
+        }
+
         componentDidMount() {
 
             this._mounted=true

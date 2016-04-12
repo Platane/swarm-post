@@ -14,9 +14,9 @@ const proj = ( boundingBox, width, height ) =>
 const Curve = ({ points, width, height }) => {
 
     width = width   || 400
-    height = height || 400
+    height = height || 200
 
-    const boundingBox = enlargeBoundingBox( computeBoundingBox( points ), 10 )
+    const boundingBox = enlargeBoundingBox( computeBoundingBox( points ), 2 )
 
 
     return (

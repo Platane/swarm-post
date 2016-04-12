@@ -1,14 +1,14 @@
-import ForceField   from './curve.jsx'
+import ForceField   from './forceField.jsx'
 import {connect}    from 'component/abstract/connect.jsx'
 
 export default connect(
 
-    root => [ root.points.friendAttraction, root.points.neighbourRepulsion, root.points.targetAttraction ]
+    root => [ root.function.friendAttraction, root.function.neighbourRepulsion, root.function.targetAttraction ]
     ,
 
     ( friendAttraction, neighbourRepulsion, targetAttraction, props ) =>
         ({
-            points :
+            amplitude :
                    ( props.dataSet == 'friendAttraction' &&  friendAttraction )
                 || ( props.dataSet == 'neighbourRepulsion' &&  neighbourRepulsion )
                 || ( props.dataSet == 'targetAttraction' &&  targetAttraction )
