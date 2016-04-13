@@ -5,6 +5,7 @@ import ReactDOM         from 'react-dom'
 import React            from 'react'
 import Curve            from './component/curve/main.jsx'
 import ForceField       from './component/forceField/main.jsx'
+import World            from './component/world/main.jsx'
 import Contextify       from './component/abstract/contextify.jsx'
 import {create}         from 'october'
 const root = require('./fragment')
@@ -14,11 +15,12 @@ const initState = {
         friendAttraction    : {
             d0              : 20,
             fatness         : 15,
-            friendlyness    : 1,
-            revulsion       : 10,
+            friendlyness    : 0,
+            revulsion       : 2,
         },
-        neighbourRepulsion  : { k: 10 },
-        targetAttraction    : { k: 0.6 },
+        neighbourRepulsion  : { k: 6 },
+        targetAttraction    : { k: 0.1 },
+        nEntities           : 300,
     }
 }
 
@@ -44,6 +46,10 @@ const store = create( root, initState )
 
             case 'forceField' :
                 Component = ForceField
+                break
+
+            case 'world' :
+                Component = World
                 break
         }
 
