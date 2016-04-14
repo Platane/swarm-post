@@ -58,14 +58,14 @@ export default connect(
                     name    : 'friendlyness',
                     value   : friendlyness,
                     min     : 0,
-                    max     : 0.1,
+                    max     : 0.12,
                 }
             case 'nEntities':
                 return {
                     name    : 'nEntities',
                     value   : nEntities,
                     min     : 1,
-                    max     : 1000,
+                    max     : 600,
                 }
         }
     }

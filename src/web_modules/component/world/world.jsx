@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
-import draw         from './draw'
-import {create}     from './simulation'
+import {draw}           from 'draw/entity'
+import {create}         from './simulation'
 
 
 class World extends Component {

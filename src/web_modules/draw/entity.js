@@ -1,16 +1,4 @@
-
-const distance = (ax, ay, bx, by ) => {
-    const x = ax-bx
-    const y = ay-by
-    return Math.sqrt( x*x + y*y )
-}
-
-const proj = (viewport, size) =>
-    (x,y) =>
-        ({
-            x: ( x - viewport.xMin )/( viewport.xMax - viewport.xMin ) * size,
-            y: ( y - viewport.yMin )/( viewport.yMax - viewport.yMin ) * size,
-        })
+import {proj} from './proj'
 
 const colors = [
     '#aaa',
@@ -18,7 +6,7 @@ const colors = [
     '#3ea',
 ]
 
-const drawEntities = ( ctx, entities, viewport, size ) =>{
+export const drawEntities = ( ctx, entities, viewport, size ) =>{
 
     const _proj = proj( viewport, size )
 
@@ -27,7 +15,7 @@ const drawEntities = ( ctx, entities, viewport, size ) =>{
 
         const p = _proj( entities[i].x, entities[i].y )
 
-        ctx.lineWidth=1
+        ctx.lineWidth= 1
         ctx.strokeStyle= colors[ entities[i].color ]
         ctx.beginPath()
         ctx.arc( p.x, p.y, 2, 0, Math.PI*2 )
@@ -52,7 +40,7 @@ const drawTargets = ( ctx, targets, viewport, size ) =>{
 
     }
 }
-const drawLinks = ( ctx, entities, dm, viewport, size ) =>{
+export const drawLinks = ( ctx, entities, dm, viewport, size ) =>{
 
     const _proj = proj( viewport, size )
 
@@ -70,7 +58,7 @@ const drawLinks = ( ctx, entities, dm, viewport, size ) =>{
     }
 }
 
-const draw = ( ctx, entities, targets, dm, viewport, size ) =>{
+export const draw = ( ctx, entities, targets, dm, viewport, size ) =>{
 
     ctx.clearRect( 0,0,99999,99999 )
 
@@ -79,6 +67,3 @@ const draw = ( ctx, entities, targets, dm, viewport, size ) =>{
     drawTargets( ctx, targets, viewport, size )
 
 }
-
-
-module.exports = draw

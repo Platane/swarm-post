@@ -7,9 +7,12 @@ const printNumber = (x, decimal=2) => {
         return Math.round( x )
 
     const u = 0|x
-    const v = Math.round( (x%1) * 100 )
 
-    let d = v+''
+    const arr = (x+'').split('.')
+    let d = arr.length == 1
+        ? ''
+        : arr[1].slice(0,decimal)
+
     while( d.length < decimal )
         d='0'+d
 

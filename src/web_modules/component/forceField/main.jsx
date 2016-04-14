@@ -12,7 +12,7 @@ export default connect(
                    ( props.dataset == 'friendAttraction' &&  friendAttraction )
                 || ( props.dataset == 'neighbourRepulsion' &&  neighbourRepulsion )
                 || ( props.dataset == 'targetAttraction' &&  targetAttraction )
-                || []
+                || [],
         })
     ,
 
