@@ -44,7 +44,7 @@ export const connect = ( getDependencies, getState, methods, C ) => {
 
             this._methods = {}
             for ( let key in methods )
-                this._methods[ key ] = methods[ key ].bind( null, this.context.dispatch, this.context.getValue )
+                this._methods[ key ] = ( ...args ) => methods[ key ]( this.context.dispatch, this.context.getValue, this.props, ...args )
 
 
             this._update( ...dep.map( fragment => this.context.getValue( fragment ) ) )

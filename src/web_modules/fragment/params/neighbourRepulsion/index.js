@@ -1,4 +1,4 @@
 
-export const k = action => action.payload.k
-k.actions = [ 'params:friendAttraction:k:set' ]
+export const k = action => action.payload.value
+k.actions = [ 'params:neighbourRepulsion:k:set' ]
 k.defaultValue = 0

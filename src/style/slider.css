@@ -1,0 +1,46 @@
+.slider{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.slider-bar{
+    position: relative;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.slider-bar-line{
+    position: absolute;
+    top: calc( 50% - 2px );
+    width: 100%;
+    left:0;
+    border-radius: 2px;
+    height: 4px;
+    background-color: #eee;
+}
+.slider-bar-fullLine{
+    position: absolute;
+    top: calc( 50% - 2px );
+    left:0;
+    border-radius: 2px;
+    height: 4px;
+    background-color: #aaa;
+    transition: width 100ms ease;
+}
+.slider-bar-carret{
+    position: absolute;
+    top: calc( 50% - 4px );
+    border-radius: 4px;
+    height: 8px;
+    width: 8px;
+    background-color: #aaa;
+    transition: left 100ms ease;
+}
+
+.slider-name,
+.slider-value{
+    min-width: 100px;
+    text-align: center;
+}

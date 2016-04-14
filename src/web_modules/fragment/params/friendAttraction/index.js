@@ -1,16 +1,16 @@
 
-export const d0 = action => action.payload.d0
-d0.actions = [ 'params:neighbourRepulsion:d0:set' ]
+export const d0 = action => action.payload.value
+d0.actions = [ 'params:friendAttraction:d0:set' ]
 d0.defaultValue = 0
 
-export const fatness = action => action.payload.fatness
-fatness.actions = [ 'params:neighbourRepulsion:fatness:set' ]
+export const fatness = action => action.payload.value
+fatness.actions = [ 'params:friendAttraction:fatness:set' ]
 fatness.defaultValue = 0
 
-export const friendlyness = action => action.payload.friendlyness
-friendlyness.actions = [ 'params:neighbourRepulsion:friendlyness:set' ]
+export const friendlyness = action => action.payload.value
+friendlyness.actions = [ 'params:friendAttraction:friendlyness:set' ]
 friendlyness.defaultValue = 0
 
-export const revulsion = action => action.payload.revulsion
-revulsion.actions = [ 'params:neighbourRepulsion:revulsion:set' ]
+export const revulsion = action => action.payload.value
+revulsion.actions = [ 'params:friendAttraction:revulsion:set' ]
 revulsion.defaultValue = 0

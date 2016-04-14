@@ -2,7 +2,7 @@
 import * as fn from 'fragment/function'
 
 export const xRange = () =>
-    Array.apply(null, new Array( 100 ))
+    Array.apply(null, new Array( 200 ))
         .map( (_, i) => i / 2  )
 
 

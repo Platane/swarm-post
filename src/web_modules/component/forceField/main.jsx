@@ -9,9 +9,9 @@ export default connect(
     ( friendAttraction, neighbourRepulsion, targetAttraction, props ) =>
         ({
             amplitude :
-                   ( props.dataSet == 'friendAttraction' &&  friendAttraction )
-                || ( props.dataSet == 'neighbourRepulsion' &&  neighbourRepulsion )
-                || ( props.dataSet == 'targetAttraction' &&  targetAttraction )
+                   ( props.dataset == 'friendAttraction' &&  friendAttraction )
+                || ( props.dataset == 'neighbourRepulsion' &&  neighbourRepulsion )
+                || ( props.dataset == 'targetAttraction' &&  targetAttraction )
                 || []
         })
     ,

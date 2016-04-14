@@ -24,7 +24,9 @@ const Curve = ({ points, width, height }) => {
 
             <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
 
-                <path className="curve-path" d={ toSvgPath( points.map( proj( boundingBox, width, height ) ) ) } />
+                { points.length &&
+                    <path className="curve-path" d={ toSvgPath( points.map( proj( boundingBox, width, height ) ) ) } />
+                }
 
             </svg>
 

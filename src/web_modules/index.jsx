@@ -6,6 +6,7 @@ import React            from 'react'
 import Curve            from './component/curve/main.jsx'
 import ForceField       from './component/forceField/main.jsx'
 import World            from './component/world/main.jsx'
+import Slider           from './component/slider/main.jsx'
 import Contextify       from './component/abstract/contextify.jsx'
 import {create}         from 'october'
 const root = require('./fragment')
@@ -27,19 +28,22 @@ const initState = {
 
 const store = create( root, initState )
 
-;[].slice.call( document.querySelectorAll('figure[data-component]') )
-    .map( figure =>
-        ({
-            component : figure.getAttribute('data-component'),
-            dataSet   : figure.getAttribute('data-dataSet'),
-            figure
-        })
-    )
-    .forEach( ({ figure, component, dataSet }) => {
+;[].slice.call( document.querySelectorAll('[data-component]') )
+    .map( element => {
+
+        const props = {}
+
+        for ( let i=element.attributes.length; i--; )
+            if ( element.attributes[i].name.match(/data-/) )
+                props[ element.attributes[i].name.slice(5) ] = element.attributes[i].value
+
+        return { element, props }
+    })
+    .forEach( ({ element, props }) => {
 
         let Component
 
-        switch( component ){
+        switch( props.component ){
             case 'curve' :
                 Component = Curve
                 break
@@ -51,16 +55,25 @@ const store = create( root, initState )
             case 'world' :
                 Component = World
                 break
+
+            case 'slider' :
+                Component = Slider
+                break
         }
 
         if( Component ) {
 
             const container = document.createElement( 'div' )
-            container.setAttribute('class', `component component-${component} component-${component}-${dataSet}` )
+            container.setAttribute('class', `component component-${props.component}` )
 
-            figure.replaceChild( container, figure.querySelector('img') )
+            const img = element.querySelector('img')
+            if ( img )
+                element.replaceChild( container, img )
 
-            ReactDOM.render( <Contextify { ...store}><Component dataSet={dataSet} /></Contextify>, container )
+            else
+                element.parentNode.replaceChild( container, element )
+
+            ReactDOM.render( <Contextify { ...store}><Component { ...props } /></Contextify>, container )
 
         }
     })
