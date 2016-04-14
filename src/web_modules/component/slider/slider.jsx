@@ -22,8 +22,7 @@ class Slider extends Component {
 
     change({ kx }) {
 
-        // const k = Math.max(Math.min(1,kx),0)
-        const k = kx
+        const k = Math.max(Math.min(1,kx),0)
         const kr = Math.round( k * 1000 ) /1000
         this.props.change( kr * ( this.props.max - this.props.min ) + this.props.min  )
     }

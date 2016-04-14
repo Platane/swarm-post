@@ -10,10 +10,11 @@ export default connect(
         root.params.friendAttraction.fatness,
         root.params.friendAttraction.revulsion,
         root.params.friendAttraction.friendlyness,
+        root.params.nEntities,
     ]
     ,
 
-    ( nrk, tak, d0, fatness, revulsion, friendlyness, props ) => {
+    ( nrk, tak, d0, fatness, revulsion, friendlyness, nEntities, props ) => {
 
         switch( props.prop ){
 
@@ -57,7 +58,14 @@ export default connect(
                     name    : 'friendlyness',
                     value   : friendlyness,
                     min     : 0,
-                    max     : 10,
+                    max     : 0.1,
+                }
+            case 'nEntities':
+                return {
+                    name    : 'nEntities',
+                    value   : nEntities,
+                    min     : 1,
+                    max     : 1000,
                 }
         }
     }

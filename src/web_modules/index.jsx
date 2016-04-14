@@ -15,9 +15,9 @@ const initState = {
     params:{
         friendAttraction    : {
             d0              : 20,
-            fatness         : 15,
-            friendlyness    : 0,
-            revulsion       : 2,
+            fatness         : 5,
+            friendlyness    : 0.02,
+            revulsion       : 1.5,
         },
         neighbourRepulsion  : { k: 6 },
         targetAttraction    : { k: 0.1 },

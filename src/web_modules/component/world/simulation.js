@@ -46,6 +46,8 @@ export const create = ( register, unregister, getValue ) => {
 
     const updateEntitiesNumber = ( n ) => {
 
+        n = 0|n
+
         entities.length = Math.min( entities.length, n )
 
         while( entities.length < n ) {

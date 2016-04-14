@@ -1,6 +1,8 @@
 
-const nEntities = () =>
-    200
+export const nEntities = action => action.payload.value
+nEntities.actions = [ 'params:nEntities:set' ]
+nEntities.defaultValue = 1
+
 
 module.exports = {
     neighbourRepulsion  : require('./neighbourRepulsion'),
