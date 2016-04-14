@@ -89,8 +89,8 @@ export const step = ( entities, targets, dm, fns ) => {
         const vx = ax
         const vy = ay
 
-        entities[i].vx = entities[i].vx * 0.95 + vx
-        entities[i].vy = entities[i].vy * 0.95 + vy
+        entities[i].vx = entities[i].vx * 0.965 + vx
+        entities[i].vy = entities[i].vy * 0.965 + vy
 
         entities[i].x += entities[i].vx
         entities[i].y += entities[i].vy

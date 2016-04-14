@@ -52,6 +52,23 @@ const drawTargets = ( ctx, targets, viewport, size ) =>{
 
     }
 }
+const drawLinks = ( ctx, entities, dm, viewport, size ) =>{
+
+    const _proj = proj( viewport, size )
+
+    for( let i=targets.length; i--; )
+    {
+
+        const p = _proj( targets[i].x, targets[i].y )
+
+        ctx.lineWidth=1
+        ctx.strokeStyle = colors[ i ] || 'rgb(220, 220 ,220)'
+        ctx.beginPath()
+        ctx.arc( p.x, p.y, 13, 0, Math.PI*2 )
+        ctx.stroke()
+
+    }
+}
 
 const draw = ( ctx, entities, targets, dm, viewport, size ) =>{
 

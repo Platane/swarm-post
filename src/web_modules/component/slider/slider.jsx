@@ -1,12 +1,16 @@
 import React, {Component}   from 'react'
 import Slidable             from 'component/abstract/slidable.jsx'
 
-const printNumber = x => {
+const printNumber = (x, decimal=2) => {
+
+    if ( decimal == 0 )
+        return Math.round( x )
+
     const u = 0|x
     const v = Math.round( (x%1) * 100 )
 
     let d = v+''
-    while( d.length < 2 )
+    while( d.length < decimal )
         d='0'+d
 
     return u+'.'+d
@@ -33,13 +37,15 @@ class Slider extends Component {
 
         const k = ( value - min )/( max - min )
 
+        const precision = Math.max( 0, -Math.floor( Math.log( max - min )/Math.LN10 -1.5 ) )
+
         return (
 
             <div className="slider" >
 
                 <div className="slider-name" >{ name }</div>
 
-                <div className="slider-value" >{ printNumber(value) }</div>
+                <div className="slider-value" >{ printNumber(value, precision ) }</div>
 
 
                 <div className="slider-bar" >
