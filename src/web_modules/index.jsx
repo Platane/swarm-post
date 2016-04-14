@@ -21,7 +21,7 @@ const initState = {
         },
         neighbourRepulsion  : { k: 6 },
         targetAttraction    : { k: 0.1 },
-        nEntities           : 300,
+        nEntities           : 200,
     }
 }
 
