@@ -25,7 +25,7 @@ export const drawForceField = ( ctx, amplitude, sources, l, viewport, r ) =>{
         const d = Math.sqrt( ax*ax + ay*ay )
         const vx = ax/d
         const vy = ay/d
-        const h = Math.min( d*50, 1 )
+        const h = Math.min( d*30, 1 )
         const bx = x+vx*h*3.6
         const by = y+vy*h*3.6
 
