@@ -30,7 +30,7 @@ export const create = ( target, width, height ) => {
             }
     }
 
-    const step = ( fn ) => {
+    const step = ( fn, inertia=0.96 ) => {
 
         updateEntities()
 
@@ -50,8 +50,8 @@ export const create = ( target, width, height ) => {
                 ay += a * vy /d
             }
 
-            entities[ i ].vx = entities[ i ].vx * 0.965 + ax
-            entities[ i ].vy = entities[ i ].vy * 0.965 + ay
+            entities[ i ].vx = entities[ i ].vx * inertia + ax * ( 1 - inertia )
+            entities[ i ].vy = entities[ i ].vy * inertia + ay * ( 1 - inertia )
 
             entities[ i ].x += entities[ i ].vx
             entities[ i ].y += entities[ i ].vy

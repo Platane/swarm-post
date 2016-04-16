@@ -25,11 +25,12 @@ export const drawForceField = ( ctx, amplitude, sources, l, viewport, r ) =>{
         const d = Math.sqrt( ax*ax + ay*ay )
         const vx = ax/d
         const vy = ay/d
-        const h = Math.min( d*500, 1 )
-        const bx = x+vx*h*4
-        const by = y+vy*h*4
+        const h = Math.min( d*50, 1 )
+        const bx = x+vx*h*3.6
+        const by = y+vy*h*3.6
 
         ctx.strokeStyle = '#888'
+        ctx.strokeStyle = `hsl(0, 73%, ${ Math.min( 1, d*10 )*45 }%)`
         ctx.lineWidth=0.6
 
         ctx.beginPath()
@@ -39,7 +40,7 @@ export const drawForceField = ( ctx, amplitude, sources, l, viewport, r ) =>{
 
         if ( h>0.6 ){
 
-            const u = 1.4
+            const u = 1.2
             const v = 1.6
 
             ctx.beginPath()

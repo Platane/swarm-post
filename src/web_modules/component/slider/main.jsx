@@ -11,10 +11,11 @@ export default connect(
         root.params.friendAttraction.revulsion,
         root.params.friendAttraction.friendlyness,
         root.params.nEntities,
+        root.params.inertia,
     ]
     ,
 
-    ( nrk, tak, d0, fatness, revulsion, friendlyness, nEntities, props ) => {
+    ( nrk, tak, d0, fatness, revulsion, friendlyness, nEntities, inertia, props ) => {
 
         switch( props.prop ){
 
@@ -23,14 +24,14 @@ export default connect(
                     name    : 'k',
                     value   : nrk,
                     min     : 0,
-                    max     : 10,
+                    max     : 200,
                 }
             case 'targetAttraction.k':
                 return {
                     name    : 'k',
                     value   : tak,
                     min     : 0,
-                    max     : 0.5,
+                    max     : 1.5,
                 }
             case 'friendAttraction.d0':
                 return {
@@ -51,14 +52,14 @@ export default connect(
                     name    : 'revulsion',
                     value   : revulsion,
                     min     : 0,
-                    max     : 10,
+                    max     : 200,
                 }
             case 'friendAttraction.friendlyness':
                 return {
                     name    : 'friendlyness',
                     value   : friendlyness,
                     min     : 0,
-                    max     : 0.12,
+                    max     : 1,
                 }
             case 'nEntities':
                 return {
@@ -66,6 +67,13 @@ export default connect(
                     value   : nEntities,
                     min     : 1,
                     max     : 600,
+                }
+            case 'inertia':
+                return {
+                    name    : 'inertia',
+                    value   : inertia,
+                    min     : 0,
+                    max     : 1,
                 }
         }
     }

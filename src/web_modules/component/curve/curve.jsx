@@ -19,7 +19,10 @@ const available = [
     1,
     5,
     2.5,
-    10
+    10,
+    25,
+    50,
+    100,
 ]
 const closestAxis = ({ yMin, yMax }) =>
     ({

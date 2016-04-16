@@ -23,23 +23,27 @@ export const create = ( register, unregister, getValue ) => {
     ]
     const fns = {}
     const dm = []
+    let inertia = 0.9
 
-    const updateFns = ( friendAttraction, targetAttraction, neighbourRepulsion ) => {
+    const updateFns = ( friendAttraction, targetAttraction, neighbourRepulsion, _inertia ) => {
         fns.friendAttraction = friendAttraction
         fns.targetAttraction = targetAttraction
         fns.neighbourRepulsion = neighbourRepulsion
+        inertia = _inertia
     }
 
     updateFns(
         getValue( root.function.friendAttraction ),
         getValue( root.function.targetAttraction ),
         getValue( root.function.neighbourRepulsion ),
+        getValue( root.params.inertia ),
     )
 
     register(
         root.function.friendAttraction,
         root.function.targetAttraction,
         root.function.neighbourRepulsion,
+        root.params.inertia,
         updateFns
     )
 
@@ -76,7 +80,7 @@ export const create = ( register, unregister, getValue ) => {
 
         stepDistanceMatrix( dm, entities )
 
-        stepWorld( entities, targets, dm, fns )
+        stepWorld( entities, targets, dm, fns, inertia )
 
     }
 

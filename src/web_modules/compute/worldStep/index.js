@@ -50,7 +50,7 @@ export const initDistanceMatrix = entities => {
 }
 
 
-export const step = ( entities, targets, dm, fns ) => {
+export const step = ( entities, targets, dm, fns, inertia ) => {
 
     for( let i=entities.length; i--; ) {
 
@@ -89,8 +89,8 @@ export const step = ( entities, targets, dm, fns ) => {
         const vx = ax
         const vy = ay
 
-        entities[i].vx = entities[i].vx * 0.965 + vx
-        entities[i].vy = entities[i].vy * 0.965 + vy
+        entities[i].vx = entities[i].vx * inertia + vx * ( 1-inertia )
+        entities[i].vy = entities[i].vy * inertia + vy * ( 1-inertia )
 
         entities[i].x += entities[i].vx
         entities[i].y += entities[i].vy

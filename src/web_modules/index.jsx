@@ -5,7 +5,7 @@ import ReactDOM         from 'react-dom'
 import React            from 'react'
 import Curve            from './component/curve/main.jsx'
 import ForceField       from './component/forceField/main.jsx'
-import World            from './component/world/main.jsx'
+import World            from './component/world/world.jsx'
 import Slider           from './component/slider/main.jsx'
 import Contextify       from './component/abstract/contextify.jsx'
 import {create}         from 'october'
@@ -16,12 +16,14 @@ const initState = {
         friendAttraction    : {
             d0              : 20,
             fatness         : 5,
-            friendlyness    : 0.02,
-            revulsion       : 1.5,
+            friendlyness    : 0.8,
+            revulsion       : 80,
         },
-        neighbourRepulsion  : { k: 6 },
-        targetAttraction    : { k: 0.1 },
+        neighbourRepulsion  : { k: 130 },
+        targetAttraction    : { k: 1 },
+
         nEntities           : 200,
+        inertia             : 0.96,
     }
 }
 
