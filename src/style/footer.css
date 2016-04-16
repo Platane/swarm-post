@@ -1,0 +1,39 @@
+
+footer{
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-top: solid 1px #eee;
+}
+.author{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.author .pic{
+    flex-shrink: 0;
+    width:70px;
+    height:70px;
+    border-radius: 35px;
+    background-position: center;
+    background-size: cover;
+}
+.author h1{
+    font-size: 1.4em;
+    margin: 20px;
+}
+
+
+.social{
+    display: flex;
+    flex-direction: row;
+}
+.social svg{
+    width:30px;
+    height:30px;
+    margin: 20px;
+}
+.social svg path{
+    fill: #9c1818;
+}

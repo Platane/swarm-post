@@ -1,19 +1,11 @@
 @import "curve.css";
 @import "slider.css";
 @import "forceField.css";
+@import "paper.css";
+@import "footer.css";
 
 html,
 body {
 	margin: 0;
 	padding: 0;
-}
-
-figure[data-component="curve"] {
-    width: 400px;
-    height: 200px;
-}
-
-img{
-    width:100%;
-    height:100%;
 }

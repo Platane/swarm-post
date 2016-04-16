@@ -1,14 +1,14 @@
 .curve-path {
-    stroke : #888;
+    stroke : #d82323;
     stroke-width : 1;
     fill : none;
 }
 .curve-axis{
-    stroke : #3213f2;
+    stroke : #888;
     stroke-width : 1;
     fill : none;
 }
 .curve-axis-label{
-    fill : #3213f2;
+    fill : #888;
     font-size: 12;
 }

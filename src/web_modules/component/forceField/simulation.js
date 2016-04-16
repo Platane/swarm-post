@@ -16,7 +16,7 @@ export const create = ( target, width, height ) => {
 
         // add
         for(let i=120 - entities.length; i--; )
-            if( Math.random() > 0.995 ) {
+            if( Math.random() > 0.994 ) {
                 const y = Math.random() * ( height * 0.9 ) + height * 0.05
                 entities.push({
                     x:0,

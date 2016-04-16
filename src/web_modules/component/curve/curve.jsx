@@ -30,7 +30,7 @@ const closestAxis = ({ yMin, yMax }) =>
 
 const Curve = ({ points, width, height }) => {
 
-    width = width   || 400
+    width = width   || 600
     height = height || 200
 
     const bb = computeBoundingBox( points )
@@ -63,29 +63,26 @@ const Curve = ({ points, width, height }) => {
     stepMin[1].x = stepMax[1].x = stepMax[1].x +2
 
     return (
-        <div className="curve" >
 
-            <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
+        <svg className="curve" viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
 
-                <path className="curve-axis" d={ toSvgPath( xAxis ) } />
+            <path className="curve-axis" d={ toSvgPath( xAxis ) } />
 
-                <path className="curve-axis" d={ toSvgPath( yAxis ) } />
+            <path className="curve-axis" d={ toSvgPath( yAxis ) } />
 
-                { bba.yMin < 0 && <path className="curve-axis" d={ toSvgPath( stepMin ) } /> }
+            { bba.yMin < 0 && <path className="curve-axis" d={ toSvgPath( stepMin ) } /> }
 
-                { bba.yMax > 0 && <path className="curve-axis" d={ toSvgPath( stepMax ) } /> }
+            { bba.yMax > 0 && <path className="curve-axis" d={ toSvgPath( stepMax ) } /> }
 
-                { bba.yMin < 0 && <text className="curve-axis-label" x={ yAxis[0].x+5 } y={ stepMin[0].y + 5 } >{ bba.yMin }</text> }
+            { bba.yMin < 0 && <text className="curve-axis-label" x={ yAxis[0].x+5 } y={ stepMin[0].y + 5 } >{ bba.yMin }</text> }
 
-                { bba.yMax > 0 && <text className="curve-axis-label" x={ yAxis[0].x+5 } y={ stepMax[1].y + 5 } >{ bba.yMax }</text> }
+            { bba.yMax > 0 && <text className="curve-axis-label" x={ yAxis[0].x+5 } y={ stepMax[1].y + 5 } >{ bba.yMax }</text> }
 
-                { points.length &&
-                    <path className="curve-path" d={ toSvgPath( points.map( _proj ) ) } />
-                }
+            { points.length &&
+                <path className="curve-path" d={ toSvgPath( points.map( _proj ) ) } />
+            }
 
-            </svg>
-
-        </div>
+        </svg>
     )
 }
 

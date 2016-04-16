@@ -1,5 +1,6 @@
 .slider{
     height: 40px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,7 +27,7 @@
     left:0;
     border-radius: 2px;
     height: 4px;
-    background-color: #aaa;
+    background-color: #9c1818;
     transition: width 100ms ease;
 }
 .slider-bar-carret{
@@ -35,7 +36,7 @@
     border-radius: 4px;
     height: 8px;
     width: 8px;
-    background-color: #aaa;
+    background-color: #9c1818;
     transition: left 100ms ease;
 }
 
@@ -43,4 +44,9 @@
 .slider-value{
     min-width: 100px;
     text-align: center;
+}
+.slider-name {
+    color: #888;
+    font-size: 0.9em;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
 }
