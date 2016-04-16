@@ -3,3 +3,12 @@
     stroke-width : 1;
     fill : none;
 }
+.curve-axis{
+    stroke : #3213f2;
+    stroke-width : 1;
+    fill : none;
+}
+.curve-axis-label{
+    fill : #3213f2;
+    font-size: 12;
+}

@@ -13,7 +13,12 @@ class ForceField extends Component {
     }
 
     componentDidMount() {
-        this._sim = create( )
+
+
+
+        this._viewport = {xMax:300, yMax:100,xMin:0, yMin:0}
+        this._target = {x:100, y:90}
+        this._sim = create( this._target, 300, 100 )
         this._loop()
     }
 
@@ -27,11 +32,12 @@ class ForceField extends Component {
 
         this.refs.entity && this.refs.entity.getContext('2d').clearRect( 0,0,9999,9999 )
 
+
         this._sim && this.refs.entity && drawEntities(
             this.refs.entity.getContext('2d'),
             this._sim.entities(),
-            {xMax:400, yMax:200,xMin:0, yMin:0},
-            400
+            this._viewport,
+            600
         )
 
         cancelAnimationFrame( this.af )
@@ -47,15 +53,15 @@ class ForceField extends Component {
 
         let { amplitude, width, height } = this.props
 
-        width = width   || 400
+        width = width   || 600
         height = height || 200
 
         cancelAnimationFrame( this.ffaf )
         this.ffaf = requestAnimationFrame( () => {
 
-            this.refs.forceField.getContext('2d').clearRect( 0,0,width,height )
+            this.refs.forceField.getContext('2d').clearRect( 0,0,9999,9999 )
 
-            drawForceField( this.refs.forceField.getContext('2d'), amplitude, [{ x: 100, y: 100 }], 10, {xMax:width, yMax:height,xMin:0, yMin:0} )
+            this._sim && drawForceField( this.refs.forceField.getContext('2d'), amplitude, [this._target], 10, this._viewport, 2 )
 
         })
 

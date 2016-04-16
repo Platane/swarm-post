@@ -1,7 +1,7 @@
 
 export const friendAttraction = ( d0, fatness, friendlyness, revulsion ) =>
     d => {
-        d = Math.max( 2, d )
+        d = Math.max( 3, d )
         return - revulsion / ( d * d ) + friendlyness * Math.exp( -( d - d0 )*( d - d0 ) / ( fatness * fatness ) )
     }
 export const targetAttraction = ( k ) =>

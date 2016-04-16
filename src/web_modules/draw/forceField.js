@@ -23,13 +23,33 @@ export const drawForceField = ( ctx, amplitude, sources, l, viewport, r ) =>{
         }
 
         const d = Math.sqrt( ax*ax + ay*ay )
+        const vx = ax/d
+        const vy = ay/d
         const h = Math.min( d*500, 1 )
+        const bx = x+vx*h*5
+        const by = y+vy*h*5
+
+        ctx.strokeStyle = '#888'
+        ctx.lineWidth=0.6
+
         ctx.beginPath()
-        ctx.lineWidth=0.5
-        ctx.strokeStyle='rgba(100,100,100,0.5)'
-        ctx.moveTo( x+ax/d*h*6, y+ay/d*h*6 )
-        ctx.lineTo( x, y )
+        ctx.moveTo( bx * r, by * r )
+        ctx.lineTo( x * r, y * r )
         ctx.stroke()
+
+        if ( h>0.6 ){
+
+            const u = 2
+            const v = 2
+
+            ctx.beginPath()
+            ctx.moveTo( ( bx +vy*u -vx*v ) * r , ( by -vx*u -vy*v ) * r )
+            ctx.lineTo( bx *r , by *r )
+            ctx.lineTo( ( bx -vy*u -vx*v ) * r , ( by +vx*u -vy*v ) * r )
+            ctx.stroke()
+        }
+
+
 
     }
 }
@@ -44,7 +64,7 @@ export const drawEntities = ( ctx, entities, viewport, size ) =>{
         const p = _proj( entities[i].x, entities[i].y )
 
         ctx.lineWidth= 1
-        ctx.globalAlpha= Math.min( 1, entities[i].k / 10,  ( 400 - entities[i].k ) / 10 ) * 0.3
+        ctx.globalAlpha= Math.min( 1, entities[i].k / 5,  ( 400 - entities[i].k ) / 10 ) * 0.3
         ctx.strokeStyle= '#3213f2',
         ctx.beginPath()
         ctx.arc( p.x, p.y, 2, 0, Math.PI*2 )

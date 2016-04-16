@@ -1,10 +1,6 @@
-export const create = ( ) => {
-
-    const width=400
-    const height=200
+export const create = ( target, width, height ) => {
 
     let entities = []
-    const target = {x:100,y:100}
 
 
     const updateEntities = () => {
@@ -21,7 +17,7 @@ export const create = ( ) => {
         // add
         for(let i=120 - entities.length; i--; )
             if( Math.random() > 0.995 ) {
-                const y = Math.random() * ( height - 50 ) + 25
+                const y = Math.random() * ( height * 0.9 ) + height * 0.05
                 entities.push({
                     x:0,
                     y:y,

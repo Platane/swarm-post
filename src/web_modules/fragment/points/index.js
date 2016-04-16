@@ -2,8 +2,8 @@
 import * as fn from 'fragment/function'
 
 export const xRange = () =>
-    Array.apply(null, new Array( 200 ))
-        .map( (_, i) => i / 2  )
+    Array.apply(null, new Array( 100 ))
+        .map( (_, i) => 3 + i / 2  )
 
 
 export const neighbourRepulsion = ( xRange, fn ) =>
