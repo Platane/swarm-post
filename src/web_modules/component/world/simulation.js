@@ -13,11 +13,11 @@ export const create = ( register, unregister, getValue ) => {
         {x:120,y:120},
         {x:70,y:170},
         {x:170,y:70},
-        ...Array.apply( null, new Array( 6 ))
+        ...Array.apply( null, new Array( 4 ))
             .map( () =>
             ({
-                x:Math.random()*width,
-                y:Math.random()*height,
+                x:Math.random()*width*0.9 + width*0.05,
+                y:Math.random()*height*0.9 + height*0.05,
             })
         )
     ]

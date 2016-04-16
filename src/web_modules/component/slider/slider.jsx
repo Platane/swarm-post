@@ -14,8 +14,8 @@ const printNumber = (x, decimal=2) => {
         : arr[1].slice(0,decimal)
 
     while( d.length < decimal )
-        d='0'+d
-
+        d=d+'0'
+        
     return u+'.'+d
 }
 

@@ -1,9 +1,9 @@
 import {proj} from './proj'
 
 const colors = [
-    '#aaa',
-    '#faa',
-    '#3ea',
+    '#9c1818',
+    '#d0b793',
+    '#f4f52b',
 ]
 
 export const drawEntities = ( ctx, entities, viewport, size ) =>{
@@ -19,6 +19,11 @@ export const drawEntities = ( ctx, entities, viewport, size ) =>{
         ctx.strokeStyle= colors[ entities[i].color ]
         ctx.beginPath()
         ctx.arc( p.x, p.y, 2, 0, Math.PI*2 )
+        ctx.stroke()
+
+        ctx.beginPath()
+        ctx.moveTo( p.x, p.y )
+        ctx.lineTo( p.x - entities[i].vx * 5 , p.y - entities[i].vy * 5  )
         ctx.stroke()
 
     }
@@ -57,7 +62,7 @@ export const drawLinks = ( ctx, entities, dm, viewport, size ) =>{
             const b = _proj( entities[j].x, entities[j].y )
 
             ctx.lineWidth= 1
-            ctx.globalAlpha= Math.min( 1, (f - delta) * 1.0 / f ) * 0.6
+            ctx.globalAlpha= Math.min( 1, (f - delta) * 1.0 / f ) * 0.4
             ctx.strokeStyle= colors[ entities[i].color ]
             ctx.beginPath()
             ctx.moveTo( a.x, a.y )

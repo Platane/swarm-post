@@ -31,7 +31,7 @@ export default connect(
                     name    : 'k',
                     value   : tak,
                     min     : 0,
-                    max     : 1.5,
+                    max     : 2.5,
                 }
             case 'friendAttraction.d0':
                 return {
@@ -73,7 +73,7 @@ export default connect(
                     name    : 'inertia',
                     value   : inertia,
                     min     : 0,
-                    max     : 1,
+                    max     : 0.999,
                 }
         }
     }

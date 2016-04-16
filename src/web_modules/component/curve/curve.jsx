@@ -1,5 +1,5 @@
 import React from 'react'
-import {computeBoundingBox, enlargeBoundingBox} from './boundingBox'
+import {computeBoundingBox} from './boundingBox'
 
 const toSvgPath = path =>
     `M ${path[0].x} ${path[0].y}`
@@ -39,6 +39,9 @@ const Curve = ({ points, width, height }) => {
     const bb = computeBoundingBox( points )
 
     const bba = { ...bb, ...closestAxis( bb ), xMin:0}
+
+    if( bba.yMin == bba.yMax )
+        bba.yMax += 0.001
 
     const margin = 25
     const bbx = {
