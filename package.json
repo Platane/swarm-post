@@ -26,6 +26,7 @@
     },
 
     "scripts": {
-        "start"         : "./node_modules/.bin/webpack-dev-server --port 8082 --content-base ./ -d"
+        "start"         : "./node_modules/.bin/webpack-dev-server --port 8082 --content-base ./ -d",
+        "build"         : "cd ./node_modules/october; npm run build; cd ../..",
     }
 }
