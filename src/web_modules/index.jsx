@@ -22,7 +22,7 @@ const initState = {
         neighbourRepulsion  : { k: 130 },
         targetAttraction    : { k: 1.2 },
 
-        nEntities           : 200,
+        nEntities           : 150,
         inertia             : 0.96,
     }
 }

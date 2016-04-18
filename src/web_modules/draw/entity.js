@@ -2,8 +2,8 @@ import {proj} from './proj'
 
 const colors = [
     '#9c1818',
-    '#d0b793',
-    '#f4f52b',
+    '#d0be21',
+    '#756947',
 ]
 
 export const drawEntities = ( ctx, entities, viewport, size ) =>{

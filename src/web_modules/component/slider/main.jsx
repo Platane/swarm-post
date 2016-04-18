@@ -66,7 +66,7 @@ export default connect(
                     name    : 'nEntities',
                     value   : nEntities,
                     min     : 1,
-                    max     : 600,
+                    max     : 450,
                 }
             case 'inertia':
                 return {

@@ -13,23 +13,26 @@
 <article>
 
     <section>
-        <p>In January, I made a thing for th 1kjs challenge. It was quite fun to make so I decide to share the story behind it.</p>
+        <p>In January, I made a thing for the <a href="http://js1k.com/2016-elemental/">js1k</a> challenge. It was quite fun to make so I decide to share the story behind it.</p>
     </section>
 
     <section>
         <h1>Overview</h1>
-        <p>It simulate a crowd of ants which go from their lair to some nice honey pot, go back to the lair and chose another honey pot to visit next... and it goes like that until you get bored and close the window.</p>
+
+        <p>For those who do not know, the goal of the challenge is to make a demo in JS in less than one kilo byte ( this is 1024 char ). It could be about anything, there is a theme different every year if you lack inspiration.</p>
+
+        <p>The demo I made is a crowd simulation. Some ants go from their lair to some nice honey pot, go back to the lair and chose another honey pot to visit next... and it goes like that until you get bored and close the window.</p>
 
         <p>There are three differents tribes of ants, with three differents homes. Each ant like to hang out with members of their tribes but carefully avoid contact with ant from other tribes.</p>
 
-        <p>The result is an hypnotic balai of busy ants making their ways into this overcrowded world.</p>
+        <p>The result is an hypnotic choregraphy of busy ants making their ways into this overcrowded world.</p>
     </section>
 
     <section>
         <h1>Force Engine</h1>
         <p>The effect is in fact quite easy to produce. The ant does not require much intelligence. They are assimilated to a point with a mass, a position and a velocity in a physique world.</p>
 
-        <p>That means, for each step, the acceleration is computed for each node. And the ant move accordingly</p>
+        <p>That means that at every frame, the acceleration is computed for each ant, and applied to it.</p>
 
         <p>The acceleration depends on three forces.</p>
 
@@ -37,9 +40,9 @@
             <li>
                 <h2>The ant is attracted to a point</h2>
 
-                <p>Either one of the point of interest or the lair, when it's time to head home.</p>
+                <p>Either one of the honey pot or the lair, when it's time to head home.</p>
 
-                <p>The attraction for this point is constant, whever the ant is far away or close from the point, his willing to reach it is always the same. And always directed to the point.</p>
+                <p>The attraction for this point is constant. The ant either far away or close from the point, its willing to reach it is always the same. And always directed toward the point.</p>
 
                 <figure data-component="curve" data-dataSet="targetAttraction">
                     <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="target attraction force amplitude">
@@ -55,13 +58,13 @@
             </li>
 
             <li>
-                <h2>Ants are repeled other ants</h2>
+                <h2>Ants are repeled by other ants</h2>
 
                 <p>...especially ants with different color.</p>
 
-                <p>The force gets stronger when the ants get closer, in a way than when they getting very close, they will be pushed in two opposite direction to avoid collision.</p>
+                <p>The force gets stronger when the ants get closer. When they get very close, they are pushed in two opposite directions to avoid collision.</p>
 
-                <p> The force is factor of 1/ d^2, where d is the distance between one ant and another, directed to the opposite direction of the other ant.</p>
+                <p>The force is factor of 1/ d^2, where d is the distance between one ant and another one.</p>
 
                 <figure data-component="curve" data-dataSet="neighbourRepulsion">
                     <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="neighbour repulsion force amplitude">
@@ -79,15 +82,15 @@
             <li>
                 <h2>Ants from the same tribes are attracted</h2>
 
-                <p>...when they are close enougth, but not to close, ants from the same tribes are attracted. ( Because travelling together is more fun that alone, event for ants ).</p>
+                <p>...when they are close enougth, but not to close. Because travelling together is more fun that alone, even for ants.</p>
 
-                <p>This is actually a unusual one.</p>
+                <p>This is actually a unusual force.</p>
 
-                <p>The tricky part is there is two position where the ant is confortable, when it gets to the ideal distance with it's friend. And when it is too far away to care about him. Betzeen this two position, it will be pushed to one or the other.</p>
+                <p>The tricky part is that there is two positions where the ant is confortable, when it gets to the ideal distance with it's friend. And when it is too far away to care about him. Between this two positions, it will be pushed to one or the other stable state.</p>
 
-                <p>The force, which obviously depends on the distance between the two ants. Have this amplitude.</p>
+                <p>The force amplitude again depends of the distance between the ants.</p>
 
-                <p>Notice the energie pit when the curve cross the y axis ( at the k position and at the Infinite )</p>
+                <p>The curve can be read as: A negative amplitude push the ant futher, a positive value attrack it. Notice the energy pit when the curve cross the y axis, when moving away from this position, the ant is pushed back to it.</p>
 
                 <figure data-component="curve" data-dataSet="friendAttraction">
                     <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="friend attraction force amplitude">
@@ -118,6 +121,8 @@
 
         <p>This is the result !</p>
 
+        <p>You may want to play with the params to see the effect on the world simulation.</p>
+
         <figure data-component="world">
             <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="world simulation demo">
             <figcaption>world</figcaption>
@@ -132,7 +137,7 @@
 
         <h1>Going under 1k</h1>
 
-        <p>It did not use any elaborate tricks to reduce the ouput size of the script. All I did was relying on the nice work of<a href="https://twitter.com/aivopaas">@aivopaas</a> on its Js crusher.</p>
+        <p>It did not use any elaborate trick to reduce the ouput size of the script. All I did was relying on the nice work of<a href="https://twitter.com/aivopaas">@aivopaas</a> and his Js crusher.</p>
 
         <p>The submited source code can be read on <a href="https://github.com/Platane/1kjs-2016">github.com/Platane/1kjs-2016</a></p>
 
