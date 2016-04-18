@@ -16,8 +16,8 @@ export const create = ( register, unregister, getValue ) => {
         ...Array.apply( null, new Array( 4 ))
             .map( () =>
             ({
-                x:Math.random()*width*0.9 + width*0.05,
-                y:Math.random()*height*0.9 + height*0.05,
+                x:Math.random()*width*0.8 + width*0.1,
+                y:Math.random()*height*0.8 + height*0.1,
             })
         )
     ]

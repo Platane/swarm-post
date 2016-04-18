@@ -2,8 +2,8 @@
 footer{
     margin-top: 100px;
     padding: 20px;
-    background-color: #fafafa;
-    border-top: solid 1px #eee;
+    background-color: #f3f3f3;
+    border-top: solid 1px #eaeaea;
 }
 .author{
     display: flex;

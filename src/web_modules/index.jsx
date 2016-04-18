@@ -1,6 +1,3 @@
-require('file?name=index.html!../index.html')
-require('../style/index.css')
-
 import ReactDOM         from 'react-dom'
 import React            from 'react'
 import Curve            from './component/curve/main.jsx'
@@ -14,13 +11,13 @@ const root = require('./fragment')
 const initState = {
     params:{
         friendAttraction    : {
-            d0              : 20,
-            fatness         : 5,
-            friendlyness    : 0.8,
-            revulsion       : 80,
+            d0              : 22,
+            fatness         : 7,
+            friendlyness    : 0.75,
+            revulsion       : 90,
         },
         neighbourRepulsion  : { k: 130 },
-        targetAttraction    : { k: 1.2 },
+        targetAttraction    : { k: 1.5 },
 
         nEntities           : 150,
         inertia             : 0.96,

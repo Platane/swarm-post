@@ -6,6 +6,7 @@ module.exports = {
 
     entry: {
         'app' : [ './src/web_modules/index.jsx' ],
+        'boot' : [ './src/boot.js' ],
     },
 
     output: {
@@ -35,6 +36,12 @@ module.exports = {
             },
 
             {
+                test: /\.png$/,
+                exclude: /(node_modules|\.tmp)/,
+                loader: 'file!image-webpack?optimizationLevel=7&interlaced=false',
+            },
+
+            {
                 test: /\.html?$/,
                 exclude: /node_modules/,
                 loaders: [],
@@ -42,7 +49,7 @@ module.exports = {
 
             {
                 test: /\.css$/,
-                loader: 'style!css'
+                loader: 'css'
             },
 
         ]

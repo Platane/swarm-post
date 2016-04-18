@@ -13,6 +13,7 @@
         "webpack" : "1.x",
         "webpack-dev-server" : "1.x",
         "file-loader" : "0.8.x",
+        "image-webpack-loader" : "1.7.x",
         "style-loader" : "0.13.x",
         "css-loader" : "0.23.x",
         "html-loader" : "0.4.x",
@@ -26,7 +27,6 @@
     },
 
     "scripts": {
-        "start"         : "./node_modules/.bin/webpack-dev-server --port 8082 --content-base ./ -d",
-        "build"         : "cd ./node_modules/october; npm run build; cd ../.."
+        "start"         : "./node_modules/.bin/webpack-dev-server --port 8082 --content-base ./ -d"
     }
 }

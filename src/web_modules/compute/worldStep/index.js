@@ -57,6 +57,9 @@ export const step = ( entities, targets, dm, fns, inertia ) => {
         let ax = 0
         let ay = 0
 
+        let axn = 0
+        let ayn = 0
+
         for( let j=entities.length; j--; ) {
 
 
@@ -68,8 +71,27 @@ export const step = ( entities, targets, dm, fns, inertia ) => {
                     ? fns.friendAttraction( d )
                     : fns.neighbourRepulsion( d )
 
-                ax += vx * amplitude
-                ay += vy * amplitude
+                if ( amplitude < 0 ){
+                    ax += vx * amplitude
+                    ay += vy * amplitude
+
+                } else {
+                    axn += vx * amplitude
+                    ayn += vy * amplitude
+
+                }
+
+            }
+        }
+
+        {
+            // limit the influence of friends
+            const d = Math.sqrt( axn*axn + ayn*ayn )
+            const h = Math.min( d, 2 )
+
+            if ( d > 0) {
+                ax += axn / d * h
+                ay += ayn / d * h
             }
         }
 

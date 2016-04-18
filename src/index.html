@@ -1,13 +1,5 @@
-<html>
-
-<head>
-    <title>Swarm post mortem</title>
-</head>
-
-
-<body>
-
 <header>
+    <h1>Swarm</h1>
 </header>
 
 <article>
@@ -45,12 +37,12 @@
                 <p>The attraction for this point is constant. The ant either far away or close from the point, its willing to reach it is always the same. And always directed toward the point.</p>
 
                 <figure data-component="curve" data-dataSet="targetAttraction">
-                    <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="target attraction force amplitude">
+                    <img src="asset/target-attraction-amplitude.png" alt="target attraction force amplitude">
                     <figcaption>target attraction force amplitude</figcaption>
                 </figure>
 
                 <figure data-component="forceField" data-dataSet="targetAttraction">
-                    <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="target attraction force field">
+                    <img src="asset/target-attraction-force-field.png" alt="target attraction force field">
                     <figcaption>target attraction force field</figcaption>
                 </figure>
 
@@ -67,12 +59,12 @@
                 <p>The force is factor of 1/ d^2, where d is the distance between one ant and another one.</p>
 
                 <figure data-component="curve" data-dataSet="neighbourRepulsion">
-                    <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="neighbour repulsion force amplitude">
+                    <img src="asset/neighbour-repulsion-amplitude.png" alt="neighbour repulsion force amplitude">
                     <figcaption>neighbour repulsion force amplitude</figcaption>
                 </figure>
 
                 <figure data-component="forceField" data-dataSet="neighbourRepulsion">
-                    <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="neighbour repulsion force field">
+                    <img src="asset/neighbour-repulsion-force-field.png" alt="neighbour repulsion force field">
                     <figcaption>neighbour repulsion force field</figcaption>
                 </figure>
 
@@ -93,13 +85,13 @@
                 <p>The curve can be read as: A negative amplitude push the ant futher, a positive value attrack it. Notice the energy pit when the curve cross the y axis, when moving away from this position, the ant is pushed back to it.</p>
 
                 <figure data-component="curve" data-dataSet="friendAttraction">
-                    <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="friend attraction force amplitude">
+                    <img src="asset/friend-attraction-amplitude.png" alt="friend attraction force amplitude">
                     <figcaption>friend attraction force amplitude</figcaption>
                 </figure>
 
 
                 <figure data-component="forceField" data-dataSet="friendAttraction">
-                    <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="friend attraction force field">
+                    <img src="asset/friend-attraction-force-field.png" alt="friend attraction force field">
                     <figcaption>friend attraction force field</figcaption>
                 </figure>
 
@@ -124,7 +116,7 @@
         <p>You may want to play with the params to see the effect on the world simulation.</p>
 
         <figure data-component="world">
-            <img src="https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif" alt="world simulation demo">
+            <img src="asset/world.png" alt="world simulation demo">
             <figcaption>world</figcaption>
         </figure>
 
@@ -179,7 +171,3 @@
 </footer>
 
 </body>
-
-<script src="app.js"></script>
-
-</html>

@@ -7,9 +7,28 @@ body {
 header{
     height: 400px;
     width: 100%;
-    background-image: url(https://raw.githubusercontent.com/Platane/1kjs-2016/master/screenshot/1.gif);
-    background-size: cover;
-    background-position: center;
+    background-image: url(../asset/hero.png);
+    background-size: contain;
+    background-repeat: no-repeat;;
+    background-position: 20% 50%;
+    position: relative;
+}
+header:after {
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(0, rgba(0,0,0,0.2), rgba(0,0,0,0.05) );
+}
+header > h1 {
+    bottom: 0;
+    left: calc( 40% - 140px );
+    position: absolute;
+    font-size: 3.5em;
+    margin: 0;
 }
 article{
     max-width: 700px;
@@ -55,8 +74,16 @@ h2 {
 }
 
 figure{
-    width: 100%;
     margin: 20px;
+}
+figure[data-component="curve"],
+figure[data-component="forceField"]{
+    width: 600px;
+    height: 200px;
+}
+figure[data-component="world"]{
+    width: 600px;
+    height: 600px;
 }
 
 img{
