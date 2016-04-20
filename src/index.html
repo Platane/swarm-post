@@ -5,17 +5,17 @@
 <article>
 
     <section>
-        <p>In January, I made a thing for the <a href="http://js1k.com/2016-elemental/">js1k</a> challenge. It was quite fun to make so I decide to share the story behind it.</p>
+        <p>In January, I made a thing for the <a href="http://js1k.com/2016-elemental/">js1k</a> challenge. It was quite fun to make so I wanted to share the story behind it.</p>
     </section>
 
     <section>
         <h1>Overview</h1>
 
-        <p>For those who do not know, the goal of the challenge is to make a demo in JS in less than one kilo byte ( this is 1024 char ). It could be about anything, there is a theme different every year if you lack inspiration.</p>
+        <p>For those who do not know, the goal of this challenge is to make a JS demo of less than a kilo byte ( this is 1024 char ). It could be about anything, there is a different theme every year if you lack inspiration.</p>
 
         <p>The demo I made is a crowd simulation. Some ants go from their lair to some nice honey pot, go back to the lair and chose another honey pot to visit next... and it goes like that until you get bored and close the window.</p>
 
-        <p>There are three differents tribes of ants, with three differents homes. Each ant like to hang out with members of their tribes but carefully avoid contact with ant from other tribes.</p>
+        <p>There are three different tribes of ants, with three different homes. Each ant like to hang out with members of their tribe but carefully avoid contact with anta from other tribes.</p>
 
         <p>The result is an hypnotic choregraphy of busy ants making their ways into this overcrowded world.</p>
     </section>
@@ -34,7 +34,7 @@
 
                 <p>Either one of the honey pot or the lair, when it's time to head home.</p>
 
-                <p>The attraction for this point is constant. The ant either far away or close from the point, its willing to reach it is always the same. And always directed toward the point.</p>
+                <p>The ant is always willing to reach the point, be it far away from it or really close. The force is always the same and directed towards to point.</p>
 
                 <figure data-component="curve" data-dataSet="targetAttraction">
                     <img src="asset/target-attraction-amplitude.png" alt="target attraction force amplitude">
@@ -56,7 +56,7 @@
 
                 <p>The force gets stronger when the ants get closer. When they get very close, they are pushed in two opposite directions to avoid collision.</p>
 
-                <p>The force is factor of 1/ d^2, where d is the distance between one ant and another one.</p>
+                <p>The force is factor of 1/ d^2, where d is the distance between two ants.</p>
 
                 <figure data-component="curve" data-dataSet="neighbourRepulsion">
                     <img src="asset/neighbour-repulsion-amplitude.png" alt="neighbour repulsion force amplitude">
@@ -74,15 +74,15 @@
             <li>
                 <h2>Ants from the same tribes are attracted</h2>
 
-                <p>...when they are close enougth, but not to close. Because travelling together is more fun that alone, even for ants.</p>
+                <p>...when they are close enough, but not to close. Because travelling together is gunnier that travelling alone, even for ants.</p>
 
-                <p>This is actually a unusual force.</p>
+                <p>This isn't a common force.</p>
 
-                <p>The tricky part is that there is two positions where the ant is confortable, when it gets to the ideal distance with it's friend. And when it is too far away to care about him. Between this two positions, it will be pushed to one or the other stable state.</p>
+                <p>The tricky part is that there is two positions where the ant is comfortable, when it gets to the ideal distance from its friend, and when it is too far away to care about him. Between these two positions, it will be pushed to either one of the stable states.</p>
 
-                <p>The force amplitude again depends of the distance between the ants.</p>
+                <p>The force amplitude once again depends on the distance between the ants.</p>
 
-                <p>The curve can be read as: A negative amplitude push the ant futher, a positive value attrack it. Notice the energy pit when the curve cross the y axis, when moving away from this position, the ant is pushed back to it.</p>
+                <p>The curve can be read as: A negative amplitude push the ant futher, a positive value attract it. Notice the energy pit when the curve crosses the y axis, when moving away from this position, the ant is pushed back to it.</p>
 
                 <figure data-component="curve" data-dataSet="friendAttraction">
                     <img src="asset/friend-attraction-amplitude.png" alt="friend attraction force amplitude">
